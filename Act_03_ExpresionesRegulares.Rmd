@@ -109,6 +109,9 @@ tabla_6 <- cbind(tabla_6, casos.hombres, porcentaje.hombres)
 
 ```{r}
 library(stringr)
+## Veamos los títulos de las columnas
+names(tabla_6)
+
 # Reemplazamos el patrón con "nada"
 mujeres <- gsub(",","", tabla_6&Mujeres)
 mujeres
