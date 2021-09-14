@@ -1,0 +1,206 @@
+---
+title: "Act.03. ExpresionesRegulares"
+author: "Sofía Palacios Cuevas"
+date: "6/9/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Expresiones Regulares {.tabset}
+
+## **PASO 1**
+### **Instalación de librerías y lectura de metadatos**
+<div align="justify"><p>En esta actividad curaremos una base de datos extraída de un documento PDF. Para tal fin, utilizaremos la tabla 6 del:</p><p>INFORME HISTÓRICO DE VIH 1ER TRIMESTRE 2021, correspondiente al SISTEMA DE VIGILANCIA EPIDEMIOLÓGICA DE VIH.</p><p>Fuente: <https://www.gob.mx/cms/uploads/attachment/file/647383/VIH-Sida_1erTrim_2021.pdf></p>
+
+```{r}
+# Cargamos el paquete tabulizer
+library(rJava)
+library(tabulizer)
+
+# Extraemos los metadatos
+info.del.pdf <- extract_metadata("VIH-Sida_1erTrim_2021.pdf")
+info.del.pdf
+```
+
+## **PASO 2**
+### **Extracción de tablas**
+```{r}
+# Extraeremos las tablas con la función extract_tables
+# Indicar que la salida debe ser formato data frame
+
+tablas <- extract_tables("VIH-Sida_1erTrim_2021.pdf", output = "data.frame")
+
+# Veamos cómo quedó
+tablas
+
+# Extraigo la tabla 6
+tabla_6 <- tablas[[6]]
+
+```
+Puedo notar que la tabla se importó con muchos errores (esto es normal). En el resto del script nos dedicaremos a corregirlos.
+
+## **PASO 3**
+
+Quitamos las observaciones que no nos sirven. En este caso quitaremos la columna "X", correspondiente a la columna 4. También quitaremos el renglón 1.
+
+```{r}
+# Usaremos el operador corchetes para reescribir la tabla_6
+# omitiendo la c4 y r1
+tabla_6 <- tabla_6[-1,-4]
+# Veamos el resultado
+View(tabla_6) 
+```
+
+<div align="justify">Ahora también puedo notar que, en la columna "Hombres", se unieron los datos de dos columnas, a continuación vamos a separarlas.</div>
+
+## **PASO 4**
+<div align="justify">Como primer acercameinto quitaremos las comas, vamos a reemplazarlas por... nada.</div>
+
+```{r}
+# Instalamos y llamamos la librería stringr para cadenas de texto con 
+# expresiones regulares
+
+library(stringr)
+
+# Reemplacemos el patrón con lo que queramos: nada
+# "" para que no deje espacio vacío (" ")
+hombres <- gsub(",", "",tabla_6$Hombres)
+hombres
+
+# Reemplazamos espacios con "nada"
+hombres <- gsub(" ", "", hombres)
+hombres
+
+# Reemplacemos las 3 últimas cifras por "nada"
+# Las guardamos en un nuevo vector
+casos.hombres <- gsub("[0-9][0-9] \\. [0-9]"," ", hombres)
+casos.hombres
+# UNA COMULNA LISTA :)
+# Nos quedamos con las tres últimas cifras
+library(gsubfn)
+
+# Instalamos el paquete "proto"
+library(proto)
+porcentaje.hombres<-strapplyc(hombres, "[0-9][0-9]\\.[0-9]", simplify = T)
+# Lo vemos
+porcentaje.hombres
+```
+
+## **PASO 5**
+<div align="justify">Ya puedo eliminar la columna “Hombres”, y en su lugar agregaré el vector “casos.hombres” y el vector “porcentaje.hombres”, como columnas al data.frame</div>
+```{r}
+# Eliminemos la columna "Hombres" usadno la fun. subset() 
+# // = usar operador corchetes
+
+tabla_6 <-subset(tabla_6, select = -c(Hombres))
+View(tabla_6)
+
+# Añadimos los vectores "porcentaje.hombres" y "casos.hombres" al data frame
+tabla_6 <- cbind(tabla_6, casos.hombres, porcentaje.hombres)
+```
+
+<div align="justify">Notemos que la columna "Mujeres" contine una mezcla de las columnas "Casos mujeres" y "Porcentaje mujeres". Separémoslas como en el caso de "Hombres".</div>
+
+## **PASO 6**
+<div align="justify">Quitemos las comas y espacios vacíos; cambiémolos por "nada".</div>
+
+```{r}
+library(stringr)
+# Reemplazamos el patrón con "nada"
+mujeres <- gsub(",","", tabla_6&Mujeres)
+mujeres
+
+# Reemplazamos los espacios con "nada"
+mujeres <- gsub(" ", "", mujeres)
+# Lo vemos
+mujeres
+
+# Reemplacemos las 3 últimas cifras por "nada" y guardémoslas en un nuevo vector
+casos.mujeres <-gsub("[0-9][0-9]\\.[0-9]", "", mujeres)
+casos.mujeres
+
+# Nos quedamos con las 3 últimas cifras
+library(gsubfn)
+procentaje.mujeres<-strapplyc(mujeres, "[0-9][0-9]\\.[0.9]", simplify = T)
+# Lo vemos
+porcentaje.mujeres
+```
+
+## **PASO 7**
+<div align="justify">Ya tengo en vectores separados los casos de mujeres y el porcentaje de mujeres, ahora solo tengo que agregarlos al data frame, además ya puedo eliminar la columna “Mujeres”.</div>
+```{r}
+# Eliminamos la fun. subset() para quitar la columna "Mujeres"
+# También se puede usar el operador corchetes
+tabla_6 <- subset(tabla_6, select = -c(Mujeres))
+# Lo vemos
+View(tabla_6)
+
+# Agregamos los vectores "porcentaje.mujeres" y "casos.mujeres" al data frame
+tabla_6 <- cbind(tabla_6, casos.mujeres, porcentaje.mujeres)
+# Lo vemos
+View(tabla_6)
+```
+
+## **PASO 8**
+<div aling="justify">Me doy cuenta que la columna “Total” tiene comas y espacios, así que se los quitaré. También cambiaré su nombre Total.de.casos</div>
+
+```{r}
+# Sustituimos las comas por "nada" con fun. gsub()
+# Adaptamos la expresión regular para hacer todo de un jalón
+tabla_6$Total <- gsub("[,][ ]","", tabla_6$Total)
+
+# Veamos cuál es el índice de la columna "Total" con la fun. names()
+# Lo anterior para cambiar el nombre de la columna
+names(tabla_6)
+
+# En este caso, es el índice [2]
+# Usamos fun. names() con otra sintaxis para cambiar el nombre
+names(tabla_6)[2]<-"total.de.casos"
+# Verifiquemos que se cambiara correctamente
+View(tabla_6)
+```
+
+## **PASO 9**
+<div align="justify">Me doy cuenta que la variables “X.1” debe llamarse “Porcentaje.total.de.casos”, y la variable “Grupo.de”, debe llamarse “Grupo.de.edad”, entonces les cambio el nombre</div>
+
+```{r}
+# Instalemos el pac.reshape() para usar la fun. rename()
+install.packages("reshape", dependencies = T)
+
+# Llamamos al paquete
+library(reshape)
+
+# Vemos cómo se llama actualmente
+names(tabla_6)
+
+# Cambiamos el nombre a las variables de interés
+tabla_6<-rename(tabla_6, c(Grupo.de="grupo.de.edad", X.1="porcentaje.total.de.casos"))
+
+# Verificamos el cambio
+names(tabla_6)
+```
+
+## **PASO 10**
+<div aling="justify">Puedo darme cuenta que las variables no están en orden en mi data frame, así que las acomadaré, de acuerdo a la tabla del PDF, en el siguiente orden:
+</div>
+```{r}
+# Para ello, usemos fun. subset() con el argumento 
+# select en el orden deseado
+
+names(tabla_6)
+
+tabla_6<-subset(tabla_6, select= c(1,4,5,6,7,2,3))
+
+# Lo vemos
+names(tabla_6)
+```
+
+## **PASO 11**
+<div align="justify"> ¡Finalmente!, despues de más de 100 líneas (casi 200), exportamos nuestra base de datos en un archivo csv</div>
+```{r}
+write.csv(tabla_6, "Distribucion_de_casos_de_VIH_por_grupo_de_edad_y_sexo.csv")
+```
+
