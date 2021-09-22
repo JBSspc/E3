@@ -21,9 +21,10 @@ Rúbrica:
 
 
 # Ejemplos en clase{.tabset}
-## **E1**
+## **UP**
 
-**Ejemplo 1** Gráfica de barras de una variable 
+## **E1**
+### **Ejemplo 1** Gráfica de barras de una variable 
 Trabajaremos con la base de datos del equipo 1, referente a datos mundiales de suicidio
 <https://www.kaggle.com/szamil/who-suicide-statistics>
 
@@ -55,8 +56,8 @@ A usefull way to ask R how many women/man cases we have, is to do the following:
 ```{r}
 table(bd.suicide$sex)
 ```
-## E2
-**Example 2** Density graph of a continuos variable.
+## **E2**
+### **Example 2** Density graph of a continuos variable.
 <div aling="justify"><p> In this case, we will use Team 5's database, which corresponds to student performance <https://www.kaggle.com/spscientist/students-performance-in-exams></p></div>
 
 ```{r}
@@ -85,6 +86,63 @@ library(viridis)
 ggplot(db.student.perfo, aes(x=math.score, group=lunch, fill=lunch))+
   geom_density(adjust=1.5, alpha=0.5)+
   theme_classic()
+```
+
+## **E3** 
+### **Example 3** Panel Bar Graph
+Lets continue using Team's 5 database
+```{r}
+# We call our libraries
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+
+# Now we plot
+ggplot(db.student.perfo, aes(x=lunch, y = reading.score, fill = lunch ) )+
+  geom_bar(postition = "dodge", stat = "identity") +
+  scale_fill_viridis(discrete = T, option = "E") +
+  facet_wrap(~race.ethnicity) +
+  theme_ipsum() +
+  ggtitle("Puntaje en matemáticas, por etnia y tipo de almuerzo" ) +
+  theme(plot.title = element_text(size=16))
+  
+```
+
+## **E4**
+### **Example 4** Time Series Plot
+We will continue working with the suicide database.
+```{r}
+# New chunk Ctrl+Alt+i
+# st = serie de tiempo (time series)
+# We make a subset with the data from Mexico
+st.suicide.mex <- subset(bd.suicide, country=="Mexico")
+# We call or libraries
+library(ggplot2)
+library(dplyr)
+
+# We plot
+ggplot(st.suicide.mex, aes(x=year, y=suicides_no)) +
+  geom_line()
+# UPS, THIS GRAPH IS A BAD EXAMPLE XD
+```
+Lets see a more detailed plot
+```{r}
+# We select mexican men, 15-24 age range:
+st.young.men <- subset(bd.suicide , country =="Mexico"&age=="15-24 years"&sex=="male" , selec = c(year, suicides_no) )
+# We call our libraries
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(hrbrthemes)
+
+# We plot and save it in an object
+plot <- st.young.men %>%
+  ggplot( aes(x=year, y=suicides_no) ) +
+  geom_line()
+
+# We convert the graphic object to a ploty format
+p <- ggplotly(plot)
+p
 ```
 
 
