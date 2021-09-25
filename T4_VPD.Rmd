@@ -268,15 +268,196 @@ g8
 
 
 ## Razones para no cursar el presente ciclo escolar
-```{r}
 
+### Por COVID 19
+```{r}
+# Cargamos las librerías
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+
+# Graficamos
+g21<-ggplot(bd.modulo, aes(x=ENT, y=P3_16, fill=P3_16)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por COVID 19 por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g21
+```
+
+### Por carencia de TICs
+```{r}
+# Graficamos
+g22<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_1, fill=P3_17_1)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por carencia de TICs por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g22
+```
+
+### Por pérdida/reducción de ingresos familiares 
+```{r}
+# Graficamos
+g23<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_2, fill=P3_17_2)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por pérdida de ingresos por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g23
+```
+
+### Por familiar enfermo/fallecido de COVID 19
+```{r}
+# Graficamos
+g24<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_4, fill=P3_17_4)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por enfermedad/fallecimeinto de pariente por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g24
+```
+
+### Por cierre definitivo del plantel educativo
+```{r}
+# Graficamos
+g25<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_5, fill=P3_17_5)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por cierre definitivo de plantel por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g25
+```
+
+### Por ausencia de tutor
+```{r}
+# Graficamos
+g26<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_6, fill=P3_17_6)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abamdono por ausencia de tutor por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g26
+```
+
+### Por considerar poco funcionales las clases a distancia
+```{r}
+# Graficamos
+g27<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_7, fill=P3_17_7)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por poca funcionalidad de clases en línea por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g27
 ```
 
 
-### Razones para cambiar de escuela
+## Razones para cambiar de escuela
+### Por cambio de residencia
 ```{r}
-
+# Graficamos
+g31<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_1, fill=P3_19_1)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por cambio de residencia por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g31
 ```
+
+### Por cambio de nivel educativo
+```{r}
+# Graficamos
+g32<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_2, fill=P3_19_2)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por cambio de nivel educativo por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g32
+```
+
+### Por cierre definitivo del plantel por COVID 19
+```{r}
+# Graficamos
+g33<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_3, fill=P3_19_3)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por cierre definitivo del plantel por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g33
+```
+
+### Por colegiatura
+```{r}
+# Graficamos
+g34<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_4, fill=P3_19_4)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por colegiatura por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g34
+```
+
+### Por mala gestión de clases virtuales por parte de la institución educativa
+```{r}
+# Graficamos
+g35<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_5, fill=P3_19_5)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por mala gestión por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g35
+```
+
+### Por otros motivos
+```{r}
+# Graficamos
+g36<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_6, fill=P3_19_6)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por otros motivos por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g36
+```
+
+### Porque no le gustaba la escuela
+```{r}
+# Graficamos
+g37<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_7, fill=P3_19_7)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Cambio de escuela por gusto por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g37
+```
+
 
 ## TICs
 ### Uso de TICs durante el ciclo escolar pasado
