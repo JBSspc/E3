@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <div align="justify"><p>En esta actividad realizamos, mediante gráficos sencillos, una visualización preliminar de cada una de nuestras variables de interés.</p><p>**Nota al profesor:** Nos dimos cuenta de que eran demasiadas variables para trabajar, al tiempo que parece más útil para nuestros fines la base de datos por módulo. Por ello, pedimos la posibilidad de modificar el proyecto, de modo que sólo utilicemos dicha base. Finalmente, se intentó graficar a modo de columnas agrupadas, pero fue difícil redactar los comandos; por lo printo, reglizamos gráficas de barras. De lo anterior, cabe mencionar que en el código se pidió ver las categorías lado a lado (dodge), pero las arrogó encimadas (stack).</p></div>
 
+<div align="justify"><p>*Sugerencias para próxima entrega*</p><p>Columnas agrupadas</p><p><https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2.html></p>
+
 # **Variables relacionadas con la vivienda**
 
 Vamos a limpiar una de las bases de datos que utilizaremos. Para ello nos vamos 
