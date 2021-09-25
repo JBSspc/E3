@@ -11,9 +11,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <div align="justify"><p>En esta actividad realizamos, mediante gráficos sencillos, una visualización preliminar de cada una de nuestras variables de interés.</p><p>**Nota al profesor:** Nos dimos cuenta de que eran demasiadas variables para trabajar, al tiempo que parece más útil para nuestros fines la base de datos por módulo. Por ello, pedimos la posibilidad de modificar el proyecto, de modo que sólo utilicemos dicha base. Finalmente, se intentó graficar a modo de columnas agrupadas, pero fue difícil redactar los comandos; por lo printo, reglizamos gráficas de barras. De lo anterior, cabe mencionar que en el código se pidió ver las categorías lado a lado (dodge), pero las arrogó encimadas (stack).</p></div>
 
-<div align="justify"><p>**Sugerencias para próxima entrega**</p><p>Columnas agrupadas</p><p><https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2.html></p>
+<div align="justify"><p>*Sugerencias para próxima entrega*</p><p>Columnas agrupadas</p><p><https://www.r-graph-gallery.com/48-grouped-barplot-with-ggplot2.html></p>
 
 # **Variables relacionadas con la vivienda**
+
+Vamos a limpiar una de las bases de datos que utilizaremos. Para ello nos vamos 
+a deshacer de las columnas que no necesitamos para el análisis de datos.
 
 ```{r}
 # Llamamos a nuestras librerías
@@ -48,6 +51,10 @@ ce<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_1, fill=P2_1_1)) +
   theme(plot.title = element_text(size=16))
 ce
 ```
+En esta gráfica se muestran los resultados con respecto a la disposición de 
+computadora de escritorio por entidad. Vemos que en unicamente 4 entidades,
+correspondientes a Jalisco, San Luis Posí, Tabasco y Tamaulipas, se registraron 
+respuestas negativas.
 
 ## **Computadora portátil**
 ```{r}
@@ -60,6 +67,10 @@ cp<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_2, fill=P2_1_2)) +
   theme(plot.title = element_text(size=16))
 cp
 ```
+En  esta gráfica se registra la disposición de computadoras portátiles por 
+entidad. Podemos ver que en Baja California Sur, Ciudad de México, Guanajuato,
+Jalisco, Nuevo León, Oaxaca, Querétaro, Querétaro, San Luis Potosí, Yucatán,
+Zacatecas y Tlaxcala, se registraron casos negativos.
 
 ## **Televisión digital**
 ```{r}
@@ -72,6 +83,11 @@ tv<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_3, fill=P2_1_3)) +
   theme(plot.title = element_text(size=16))
 tv
 ```
+En esta gráfica se registra la disposición de TV digital por entidad. Podemos
+ver que la disposición de este dispositivo es mayor que la de la computadora
+portátil y la de escritorio, ya que en unicamente 8 estados se registraron casos 
+negativos: Coahuila, Chihuahua, Hidalgo, Estadod e México, Oaxaca, Puebla,
+Quintana Roo y Tabasco.
 
 ## **Tablet**
 ```{r}
@@ -84,6 +100,9 @@ t<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_4, fill=P2_1_4)) +
   theme(plot.title = element_text(size=16))
 t
 ```
+En esta gráfica se muestra la disposición de tablet por entidad. Vemos que la 
+mayoría de los estados contestaron que  ''no'', a excepción de Baja California
+Sur, Ciudad de México, Jalisco y Nuevo León.
 
 ## **Celular inteligente**
 ```{r}
@@ -97,6 +116,11 @@ ci<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_5, fill=P2_1_5)) +
 ci
 ```
 
+En esta gráfica se meustra la disposición de un celular inteligente. En esta 
+ocasión los resultados no están polarizados completamente, puesto que a 
+excepción de 2 estados: Baja California y , los demás presentan respuestas
+tanto positivas como negativas.
+
 ## **Conexión a Internet fijo**
 ```{r}
 # Graficamos
@@ -108,6 +132,9 @@ cif<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_6, fill=P2_1_6)) +
   theme(plot.title = element_text(size=16))
 cif
 ```
+En esta gráfica se meustra la disposiciónn de internet fijo por entidad. En 
+esta ocasi´´on notamos que 10 estadospresentaron una mayoría de respuestas
+negativas.
 
 # **Carencia de Internet fijo**
 ### **Motivos por entidad federativa**
@@ -123,6 +150,10 @@ m.cif<-ggplot(bd.vivienda, aes(x=ENT, y=P2_2, fill=P2_2)) +
   theme(plot.title = element_text(size=14))
 m.cif
 ```
+En esta gráfica se presentan los motivos de carencia por entidad federativa.
+Por el tipo de dato es dificil dar una interpetación de primera mano de este 
+histograma.
+
 ## **Gastos inesperados para atender las clases por entidad federativa**
 
 ### **Internet fijo**
@@ -138,7 +169,9 @@ g.if<-ggplot(bd.vivienda, aes(x=ENT, y=P4_1_1, fill=P4_1_1)) +
 # tenemos que ver cómo eliminarlos o cómo considerarlos un factor = 3
 g.if
 ```
-
+En esta grafica se presentan las respuestas a la pregunta sobre si se han 
+tenido gastos adicionales que tengan que ver con la adquisición de equipo para
+las clases en línea.
 
 # Variables relacionadas con el módulo de aprendizaje {.tabset}
 ```{r}
@@ -176,6 +209,8 @@ g1<-ggplot(bd.modulo, aes(x=ENT, y=P3_8, fill=P3_8)) +
   theme(plot.title = element_text(size=14))
 g1
 ```
+En esta gráfica se muestran las razones para no conluir los estudios durante la 
+pandemia por COVID 19. Iremos revisando los resultados variable por variable.
 
 ### Por carencia de TICs
 ```{r}
@@ -189,6 +224,8 @@ g2<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_1, fill=P3_9_1)) +
   theme(plot.title = element_text(size=14))
 g2
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas con referencia a la deserción por carencia de TICs.
 
 ### Por pérdida/reducción de ingresos familiares 
 ```{r}
@@ -202,6 +239,9 @@ g3<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_2, fill=P3_9_2)) +
   theme(plot.title = element_text(size=14))
 g3
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas con referencia a la deserción por perdida de ingresos
+familiares.
 
 ### Por pérdida de contacto con profesores/ compañeros o por no poder hacer las tareas
 ```{r}
@@ -215,6 +255,9 @@ g4<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_4, fill=P3_9_4)) +
   theme(plot.title = element_text(size=14))
 g4
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a la pérdida de contacto con porfesores/compañerxs
+o bien, por no poder hacer las tareas.
 
 ### Por familiar enfermo/fallecido de COVID 19
 ```{r}
@@ -241,6 +284,8 @@ g6<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_6, fill=P3_9_6)) +
   theme(plot.title = element_text(size=14))
 g6
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes al cierre definitivo de los planteles educativos.
 
 ### Por ausencia de tutor
 ```{r}
@@ -254,6 +299,9 @@ g7<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_7, fill=P3_9_7)) +
   theme(plot.title = element_text(size=14))
 g7
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a la ausencia del tutor.
+
 
 ### Por considerar poco funcionales las clases a distancia
 ```{r}
@@ -267,6 +315,8 @@ g8<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_8, fill=P3_9_8)) +
   theme(plot.title = element_text(size=14))
 g8
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a considerar poco funcionales las clases a distancia.
 
 
 ## Razones para no cursar el presente ciclo escolar
@@ -288,6 +338,9 @@ g21<-ggplot(bd.modulo, aes(x=ENT, y=P3_16, fill=P3_16)) +
   theme(plot.title = element_text(size=14))
 g21
 ```
+Ahora vamos a analizar los resultados referentes a la pregunta ''Razones
+para no cursar el presente ciclo escolar''. Se graficará y analizará cada 
+variable.
 
 ### Por carencia de TICs
 ```{r}
@@ -301,6 +354,9 @@ g22<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_1, fill=P3_17_1)) +
   theme(plot.title = element_text(size=14))
 g22
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por
+la carencia de TICs en el hogar.
 
 ### Por pérdida/reducción de ingresos familiares 
 ```{r}
@@ -315,6 +371,10 @@ g23<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_2, fill=P3_17_2)) +
 g23
 ```
 
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por 
+la pérdida o reducción de ingresos familiares.
+
 ### Por familiar enfermo/fallecido de COVID 19
 ```{r}
 # Graficamos
@@ -327,6 +387,9 @@ g24<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_4, fill=P3_17_4)) +
   theme(plot.title = element_text(size=14))
 g24
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por
+el contagio o fallecimiento de algún familiar por COVID-19.
 
 ### Por cierre definitivo del plantel educativo
 ```{r}
@@ -341,6 +404,10 @@ g25<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_5, fill=P3_17_5)) +
 g25
 ```
 
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por el 
+cierre definitivo del plantel educativo.
+
 ### Por ausencia de tutor
 ```{r}
 # Graficamos
@@ -353,6 +420,9 @@ g26<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_6, fill=P3_17_6)) +
   theme(plot.title = element_text(size=14))
 g26
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por la
+ausencia del tutor/tutora.
 
 ### Por considerar poco funcionales las clases a distancia
 ```{r}
@@ -366,6 +436,9 @@ g27<-ggplot(bd.modulo, aes(x=ENT, y=P3_17_7, fill=P3_17_7)) +
   theme(plot.title = element_text(size=14))
 g27
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por considerar
+poco funcionales las clases a distancia.
 
 
 ## Razones para cambiar de escuela
@@ -394,6 +467,9 @@ g32<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_2, fill=P3_19_2)) +
   theme(plot.title = element_text(size=14))
 g32
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por el cambio
+de nivel educativo del estudiante.
 
 ### Por cierre definitivo del plantel por COVID 19
 ```{r}
@@ -407,6 +483,9 @@ g33<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_3, fill=P3_19_3)) +
   theme(plot.title = element_text(size=14))
 g33
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por el cierre
+definitivo-temporal del plantel.
 
 ### Por colegiatura
 ```{r}
@@ -420,6 +499,9 @@ g34<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_4, fill=P3_19_4)) +
   theme(plot.title = element_text(size=14))
 g34
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por la 
+colegiatura a pagar.
 
 ### Por mala gestión de clases virtuales por parte de la institución educativa
 ```{r}
@@ -433,6 +515,9 @@ g35<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_5, fill=P3_19_5)) +
   theme(plot.title = element_text(size=14))
 g35
 ```
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por la maala gestión
+de clases virtuales por parte de la institución académica.
 
 ### Por otros motivos
 ```{r}
@@ -447,6 +532,9 @@ g36<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_6, fill=P3_19_6)) +
 g36
 ```
 
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por otros motivos.
+
 ### Porque no le gustaba la escuela
 ```{r}
 # Graficamos
@@ -459,7 +547,9 @@ g37<-ggplot(bd.modulo, aes(x=ENT, y=P3_19_7, fill=P3_19_7)) +
   theme(plot.title = element_text(size=14))
 g37
 ```
-
+En esta gráfica podemos ver en qué entidades se registró una mayoría de respuestas 
+positivas, o bien negativas referentes a no cursar el presente ciclo escolar por disgusto
+hacia la escuela.
 
 ## TICs
 ### Uso de TICs durante el ciclo escolar pasado
