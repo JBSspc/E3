@@ -9,23 +9,26 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<div aling="justify">En esta actividad realizamos, mediante gráficos sencillos, una visualización preliminar de cada una de nuestras variables de interés.</div>
+<div align="justify"><p>En esta actividad realizamos, mediante gráficos sencillos, una visualización preliminar de cada una de nuestras variables de interés.</p><p>**Nota al profesor:** Nos dimos cuenta de que eran demasiadas variables para trabajar, al tiempo que parece más útil para nuestros fines la base de datos por módulo. Por ello, pedimos la posibilidad de modificar el proyecto, de modo que sólo utilicemos dicha base. Finalmente, se intentó graficar a modo de columnas agrupadas, pero fue difícil redactar los comandos; por lo printo, reglizamos gráficas de barras. De lo anterior, cabe mencionar que en el código se pidió ver las categorías lado a lado (dodge), pero las arrogó encimadas (stack).</p></div>
 
 # **Variables relacionadas con la vivienda**
 
 ```{r}
+# Llamamos a nuestras librerías
 library(ggplot2)
 library(viridisLite)
 library(hrbrthemes)
+# Leemos la base de datos original y aplicamos los pasos del primer parcial
+# para curar la base
 bd.original.vivienda<-read.csv("conjunto_de_datos_tvivienda_ecovid_ed_2020.csv")
 bd.vivienda<-bd.original.vivienda[ ,-c(2,3,4,5,6,7,8,9,10,11,12,13,
                                          14,15,16,17,18,19,20,21,22,23,24,25,
                                          26,27,28,29, 64)]
+# lo guardamos como csv para futuros trabajos
 write.csv(bd.vivienda, "bd.vivienda.csv")
-######## Select the "B"Base_de_datos_por_vivienda.csv" from Files and ask to
-# import"
 
-# Lets rename our cured database
+# Seleccionamos "bd.vivienda.csv" de Files e importamos
+# Leemos y vemos la bd
 bd.vivienda<-read.csv("bd.vivienda.csv")
 View(bd.vivienda)
 ```
@@ -34,6 +37,7 @@ View(bd.vivienda)
 ### **Dispositivos con los que cuentan en su vivienda por entidad federativa**
 ## **Computadora de escritorio**
 ```{r}
+# Hacemos nuestra primera gráfica (repetiremos este proceso en cada apartado)
 ce<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_1, fill=P2_1_1)) + 
   geom_bar(position="dodge",stat = "identity" ) +
   xlab("No. de Entidad Federativa") +
@@ -45,6 +49,7 @@ ce
 
 ## **Computadora portátil**
 ```{r}
+# Graficamos
 cp<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_2, fill=P2_1_2)) + 
   geom_bar(position="dodge",stat = "identity" ) +
   xlab("No. de Entidad Federativa") +
@@ -56,6 +61,7 @@ cp
 
 ## **Televisión digital**
 ```{r}
+# Graficamos
 tv<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_3, fill=P2_1_3)) + 
   geom_bar(position="dodge",stat = "identity" ) +
   xlab("No. de Entidad Federativa") +
@@ -63,4 +69,222 @@ tv<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_3, fill=P2_1_3)) +
   ggtitle("Dispocisión de TV digital por entidad" ) +
   theme(plot.title = element_text(size=16))
 tv
+```
+
+## **Tablet**
+```{r}
+# Graficamos
+t<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_4, fill=P2_1_4)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  xlab("No. de Entidad Federativa") +
+  ylab("Sí = 1, No = 2") +
+  ggtitle("Dispocisión de tablet por entidad" ) +
+  theme(plot.title = element_text(size=16))
+t
+```
+
+## **Celular inteligente**
+```{r}
+# Graficamos
+ci<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_5, fill=P2_1_5)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  xlab("No. de Entidad Federativa") +
+  ylab("Sí = 1, No = 2") +
+  ggtitle("Dispocisión de celular inteligente por entidad" ) +
+  theme(plot.title = element_text(size=16))
+ci
+```
+
+## **Conexión a Internet fijo**
+```{r}
+# Graficamos
+cif<-ggplot(bd.vivienda, aes(x=ENT, y=P2_1_6, fill=P2_1_6)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  xlab("No. de Entidad Federativa") +
+  ylab("No. de motivo") +
+  ggtitle("Dispocisión de conexión a Internet fijo por entidad" ) +
+  theme(plot.title = element_text(size=16))
+cif
+```
+
+# **Carencia de Internet fijo**
+### **Motivos por entidad federativa**
+```{r}
+# Graficamos
+m.cif<-ggplot(bd.vivienda, aes(x=ENT, y=P2_2, fill=P2_2)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  xlab("No. de Entidad Federativa") +
+  ylab("No. de motivo") +
+  ylim(0,6)+
+  ggtitle("Motivos de carencia de Internet fijo por entidad federativa" ) +
+  theme_ipsum() 
+  theme(plot.title = element_text(size=14))
+m.cif
+```
+## **Gastos inesperados para atender las clases por entidad federativa**
+
+### **Internet fijo**
+```{r}
+# Graficamos
+g.if<-ggplot(bd.vivienda, aes(x=ENT, y=P4_1_1, fill=P4_1_1)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  xlab("No. de Entidad Federativa") +
+  ylab("Sí = 1, No = 2") +
+  ggtitle("Gastos por entidad federativa" ) +
+  theme(plot.title = element_text(size=14))
+# La razón por la que salen esas dos barras largas es por los elementos NA,
+# tenemos que ver cómo eliminarlos o cómo considerarlos un factor = 3
+g.if
+```
+
+
+# Variables relacionadas con el módulo de aprendizaje {.tabset}
+```{r}
+# Cargamos nuestras librerías
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+# Leemos la base original y la curamos
+bd.original.modulo<-read.csv("conjunto_de_datos_tmodulo_ecovid_ed_2020.csv")
+bd.modulo<-bd.original.modulo[ ,-c(2,3,4,73)]                                 
+write.csv(bd.modulo, "bd.modulo.csv")
+# Seleccionamos "bd.modulo.csv" de Files e importamos
+
+# Leemos y vemos la bd
+bd.modulo<-read.csv("bd.modulo.csv")
+View(bd.modulo)
+```
+
+
+## Razones para no concluir el ciclo escolar pasado
+### Por COVID 19
+```{r}
+# Cargamos las librerías
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+
+# Graficamos
+g1<-ggplot(bd.modulo, aes(x=ENT, y=P3_8, fill=P3_8)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por COVID 19 por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g1
+```
+
+### Por carencia de TICs
+```{r}
+# Graficamos
+g2<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_1, fill=P3_9_1)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por carencia de TICs por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g2
+```
+
+### Por pérdida/reducción de ingresos familiares 
+```{r}
+# Graficamos
+g3<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_2, fill=P3_9_2)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por pérdida de ingresos por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g3
+```
+
+### Por pérdida de contacto con profesores/ compañeros o por no poder hacer las tareas
+```{r}
+# Graficamos
+g4<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_4, fill=P3_9_4)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por pérdida de contacto profesor/comapañeros" ) +
+  theme(plot.title = element_text(size=14))
+g4
+```
+
+### Por familiar enfermo/fallecido de COVID 19
+```{r}
+# Graficamos
+g5<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_5, fill=P3_9_5)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por pérdida de ingresos por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g5
+```
+
+### Por cierre definitivo del plantel educativo
+```{r}
+# Graficamos
+g6<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_6, fill=P3_9_6)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por cierre definitivo de plantel por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g6
+```
+
+### Por ausencia de tutor
+```{r}
+# Graficamos
+g7<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_7, fill=P3_9_7)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abamdono por ausencia de tutor por entidad federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g7
+```
+
+### Por considerar poco funcionales las clases a distancia
+```{r}
+# Graficamos
+g8<-ggplot(bd.modulo, aes(x=ENT, y=P3_9_8, fill=P3_9_8)) + 
+  geom_bar(position="dodge",stat = "identity" ) +
+  facet_wrap(~SEXO) +
+  xlab("No. de Entidad Federativa, 1 = Hombre, 2 = Mujer") +
+  ylab("1 = sí, 2 = no") +
+  ggtitle("Abandono por poca funcionalidad de clases en línea federativa y sexo" ) +
+  theme(plot.title = element_text(size=14))
+g8
+```
+
+
+## Razones para no cursar el presente ciclo escolar
+```{r}
+
+```
+
+
+### Razones para cambiar de escuela
+```{r}
+
+```
+
+## TICs
+### Uso de TICs durante el ciclo escolar pasado
+```{r}
+
+```
+
+### Uso de TICs durante el presente año escolar
+```{r}
+
 ```
