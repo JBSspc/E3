@@ -1,0 +1,178 @@
+---
+title: "Tarea 04: Visualización preliminar de datos (Versión 2)"
+author: "Sofía Palacios Cuevas"
+date: "29/9/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **Menú principal** {.tabset}
+
+## **INTRO**
+<div align="justify"><p>En esta actividad realizamos, mediante gráficos sencillos, una visualización preliminar de cada una de nuestras variables de interés.</p><p>Después de analizar la base de datos "bd.modulo" nos damos cuenta de que podríamos dividir nuestras variables de interés de la siguiente forma:<p></div>
+
+|Variables propias de los sujetos | Variables que describen la situación académica de los sujetos|
+|---------------------------------|----------------------------------------------------------------|
+| ENT </br> SEXO </br> EDAD </br> NIV </br> GRAD </br> | Razones para no concluir el ciclo escolar pasado </br> Razones para no cursar el ciclo escolar actual </br> Razones de cambio de escuela </br> TICs usadas durante el ciclo escolar pasado </br> TICs usadas durante el presente ciclo escolar|
+
+<div align="justify"><p>Nótese que las "variables" listadas en la columna **Variables que describen la situación académica de los sujetos** no son las variables en sí, sino el nombre del grupo de variables a las que representan. Recordemos que decidimos mantener el nombre originial de dichas variables, puesto que sus nombres hacían referencia a la pregunta cuya respuesta representan.</p> <p>En las pestañas siguientes del menú se encuentra cómo se organizan nuestras variables de interás en los grupos listados en la tabla previa. Así mismo, se puede acceder a las gráficas generadas para interpretar la información de cada grupo de variables.</p></div>
+
+## **GRUPOS**
+
+|Grupo | Variables representadas |
+|:------|:-------------------------|
+|Razones para no concluir el pasado ciclo escolar| P3_7, P3_8, P3_9_1, P3_9_2, P3_9_3, P3_9_4, P3_9_5, P3_9_6, P3_9_7, P3_9_8, P3_9_9, P3_10 |
+|Razones para no cursar el presente ciclo escolar| P3_14, P3_16, P3_17_1, P3_17_2, P3_17_3, P3_17_4, P3_17_5, P3_17_6, P3_17_7, P3_17_8, P3_18 |
+|Razones de cambio de escuela| P3_19_1, P3_19_2, P3_19_3, P3_19_4, P3_19_5, P3_19_6,  P3_19_7, P3_19_8 |
+|TICs usadas durante el pasado ciclo escolar| P3_12_1, P3_12_2, P3_12_3, P3_12_4, P3_12_5, P3_12_6, P3_12_7, P3_12_8, P3_12A, P3_13|
+|TICs usadas durante el presente ciclo escolar|P3_21_1, P3_21_2, P3_21_3, P3_21_4, P3_21_5, P3_21_6, P3_21_7, P3_21A, P3_21B|
+
+## **LECTURA**
+
+<div align = "justify">Recapitularemos desde el curado de la base de datos. </div>
+```{r}
+# Cargamos nuestras librerías
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+
+# Leemos la base original y la curamos
+bd.original.modulo<-read.csv("conjunto_de_datos_tmodulo_ecovid_ed_2020.csv")
+
+# Lo vemos
+View(bd.original.modulo)
+
+bd.modulo<-bd.original.modulo[ ,-c(2,3,4,8,9,10,23,35,64,65,66,67,
+68,69,70,71,72,73)]
+# Ahora tenemos una base de datos de 11080 obs. de 55 variables
+
+#Omitimos los NA
+#bd.modulo<-na.omit(bd.modulo)
+# Si lo hago, me borra las observaciones :(
+
+# guardamos bd.modulo como csv para añadirlo después al repositorio
+write.csv(bd.modulo, "bd.modulo.csv")
+
+# Leemos y vemos la bd (en caso de empesar a graficar usando el csv)
+# bd.modulo<-read.csv("bd.modulo.csv")
+View(bd.modulo)
+```
+
+## **CÓDIGO GRÁFICAS**
+```{r}
+# Llamamos nuestras variables
+
+library(ggplot2)
+library(viridisLite)
+library(viridis)
+library(hrbrthemes)
+
+gp3_7 <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_7 ) )+
+  geom_bar(postition = "dodge", stat = "identity") +
+  facet_wrap(~P3_7) +
+  theme_ipsum() +
+  ggtitle("No conluyó pasado ciclo escolar" ) +
+  theme(plot.title = element_text(size=16))
+
+gp3_8 <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_8 ) )+
+  geom_bar(postition = "dodge", stat = "identity") +
+  facet_wrap(~P3_8) +
+  theme_ipsum() +
+  ggtitle("No conluyó por COVID 19" ) +
+  theme(plot.title = element_text(size=16))
+
+gp3_9_1 <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_1) )+
+  geom_bar(postition = "dodge", stat = "identity") +
+  facet_wrap(~P3_9_1) +
+  theme_ipsum() +
+  ggtitle("No conluyó por falta de TICs" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+## **ENT**
+<div align = "justify"> Visualizaremos los 4 grupos de variables según la **entidad federativa** de nuestros sujetos.</div>
+
+### Razones para no concluir el ciclo escolar pasado
+
+```{r}
+gp3_7
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
+```{r}
+gp3_8
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
+```{r}
+gp3_9_1
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+### Razones para no cursar el presente ciclo escolar 
+
+
+### TICs usadas durante el ciclo escolar pasado
+
+
+### TICs usadas durante el presente ciclo escolar
+
+## **SEXO**
+<div align = "justify"> Visualizaremos los 4 grupos de variables según el **sexo** (hombre - mujer) de nuestros sujetos.</div>
+
+### Razones para no concluir el ciclo escolar pasado
+
+
+### Razones para no cursar el presente ciclo escolar 
+
+
+### TICs usadas durante el ciclo escolar pasado
+
+
+### TICs usadas durante el presente ciclo escolar
+
+
+
+## **EDAD**
+<div align = "justify"> Visualizaremos los 4 grupos de variables según la **edad** de nuestros sujetos.</div>
+
+### Razones para no concluir el ciclo escolar pasado
+
+
+### Razones para no cursar el presente ciclo escolar 
+
+
+### TICs usadas durante el ciclo escolar pasado
+
+
+### TICs usadas durante el presente ciclo escolar
+
+
+
+## **NIVEL**
+<div align = "justify"> Visualizaremos los 4 grupos de variables según el **nivel educativo** de nuestros sujetos.</div>
+
+### Razones para no concluir el ciclo escolar pasado
+
+
+### Razones para no cursar el presente ciclo escolar 
+
+
+### TICs usadas durante el ciclo escolar pasado
+
+
+### TICs usadas durante el presente ciclo escolar
+
+
+
+
+
+
+
+
+
