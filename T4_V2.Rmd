@@ -1,6 +1,6 @@
 ---
 title: "Tarea 04: Visualización preliminar de datos (Versión 2)"
-author: "Sofía Palacios Cuevas"
+author: "Ana Paola Arias, Alejandro Gutiérrez, Sofía Palacios Cuevas"
 date: "29/9/2021"
 output: html_document
 ---
@@ -76,84 +76,84 @@ library(hrbrthemes)
 #### Razones para no concluir el pasado ciclo escolar
 
 gp3_7_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_7 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_7) +
   theme_ipsum() +
   ggtitle("No concluyó pasado ciclo escolar" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_8_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_8 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_8) +
   theme_ipsum() +
   ggtitle("No concluyó por COVID 19" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_1_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_1) +
   theme_ipsum() +
   ggtitle("No concluyó por falta de TICs" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_2_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_3_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_4_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_5_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_6_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_7_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_8_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_9_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_9_9) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_9) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_10_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_10) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_10) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -162,77 +162,77 @@ gp3_10_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_10) )+
 #### Razones para no cursar el presente ciclo escolar
 
 gp3_14_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_14) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_14) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_16_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_16) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_16) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_1_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_2_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_3_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_4_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_5_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_6_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_7_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_8_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_17_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_18_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_18) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_18) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -242,28 +242,28 @@ gp3_18_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_18) )+
 #### Razones de cambio de escuela
 
 gp3_19_1_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_2_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_3_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_4_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -277,21 +277,21 @@ gp3_19_5_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_5) )+
   theme(plot.title = element_text(size=16))
 
 gp3_19_6_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_7_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_8_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -300,70 +300,70 @@ gp3_19_8_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_19_8) )+
 #### TICs usadas durante el pasado ciclo escolar
 
 gp3_12_1_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_2_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_3_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_4_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_5_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_6_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_7_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_8_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12A_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_12A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_13_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_13) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_13) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -373,63 +373,63 @@ gp3_13_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_13) )+
 #### TICs usadas durante el presente ciclo escolar
 
 gp3_21_1_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_2_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_3_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_4_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_5_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_6_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_7_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21A_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21B_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21B) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21B) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -439,42 +439,42 @@ gp3_21B_ENT <- ggplot(bd.modulo, aes(x=ENT, y = 2, fill = P3_21B) )+
 #### Razones para no concluir el pasado ciclo escolar
 
 gp3_7_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_7 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_7) +
   theme_ipsum() +
   ggtitle("No concluyó pasado ciclo escolar" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_8_SEXO<- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_8 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_8) +
   theme_ipsum() +
   ggtitle("No concluyó por COVID 19" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_1_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_1) +
   theme_ipsum() +
   ggtitle("No concluyó por falta de TICs" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_2_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_3_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_4_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -488,14 +488,14 @@ gp3_9_5_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_5) )+
   theme(plot.title = element_text(size=16))
 
 gp3_9_6_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_7_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -509,14 +509,14 @@ gp3_9_8_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_8) )+
   theme(plot.title = element_text(size=16))
 
 gp3_9_9_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_9_9) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_9) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_10_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_10) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_10) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -525,42 +525,42 @@ gp3_10_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_10) )+
 #### Razones para no cursar el presente ciclo escolar
 
 gp3_14_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_14) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_14) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_16_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_16) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_16) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_1_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_2_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_3_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_4_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -574,7 +574,7 @@ gp3_17_5_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_5) )+
   theme(plot.title = element_text(size=16))
 
 gp3_17_6_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -595,7 +595,7 @@ gp3_17_8_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_17_8) )+
   theme(plot.title = element_text(size=16))
 
 gp3_18_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_18) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_18) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -605,7 +605,7 @@ gp3_18_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_18) )+
 #### Razones de cambio de escuela
 
 gp3_19_1_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -619,21 +619,21 @@ gp3_19_2_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_2) )+
   theme(plot.title = element_text(size=16))
 
 gp3_19_3_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_4_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_5_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -647,14 +647,14 @@ gp3_19_6_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_6) )+
   theme(plot.title = element_text(size=16))
 
 gp3_19_7_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_8_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -663,70 +663,70 @@ gp3_19_8_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_19_8) )+
 #### TICs usadas durante el pasado ciclo escolar
 
 gp3_12_1_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_2_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_3_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_4_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_5_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_6_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_7_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_8_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12A_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_12A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_13_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_13) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_13) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -736,63 +736,63 @@ gp3_13_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_13) )+
 #### TICs usadas durante el presente ciclo escolar
 
 gp3_21_1_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_2_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_3_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_4_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_5_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_6_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_7_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21A_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21B_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21B) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21B) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -804,21 +804,21 @@ gp3_21B_SEXO <- ggplot(bd.modulo, aes(x=SEXO, y = 2, fill = P3_21B) )+
 #### Razones para no concluir el pasado ciclo escolar
 
 gp3_7_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_7 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_7) +
   theme_ipsum() +
   ggtitle("No concluyó pasado ciclo escolar" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_8_EDAD<- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_8 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_8) +
   theme_ipsum() +
   ggtitle("No concluyó por COVID 19" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_1_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_1) +
   theme_ipsum() +
   ggtitle("No concluyó por falta de TICs" ) +
@@ -832,56 +832,56 @@ gp3_9_2_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_2) )+
   theme(plot.title = element_text(size=16))
 
 gp3_9_3_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_4_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_5_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_6_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_7_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_8_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_9_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_9_9) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_9) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_10_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_10) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_10) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -890,77 +890,77 @@ gp3_10_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_10) )+
 #### Razones para no cursar el presente ciclo escolar
 
 gp3_14_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_14) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_14) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_16_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_16) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_16) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_1_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_2_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_3_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_4_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_5_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_6_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_7_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_8_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_17_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_18_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_18) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_18) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -970,56 +970,56 @@ gp3_18_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_18) )+
 #### Razones de cambio de escuela
 
 gp3_19_1_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_2_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_3_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_4_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_5_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_6_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_7_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_8_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1028,70 +1028,70 @@ gp3_19_8_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_19_8) )+
 #### TICs usadas durante el pasado ciclo escolar
 
 gp3_12_1_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_2_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_3_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_4_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_5_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_6_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_7_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_8_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12A_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_12A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_13_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_13) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_13) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1101,63 +1101,63 @@ gp3_13_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_13) )+
 #### TICs usadas durante el presente ciclo escolar
 
 gp3_21_1_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_2_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_3_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_4_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_5_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_6_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_7_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21A_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21B_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21B) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21B) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1169,84 +1169,84 @@ gp3_21B_EDAD <- ggplot(bd.modulo, aes(x=EDAD, y = 2, fill = P3_21B) )+
 #### Razones para no concluir el pasado ciclo escolar
 
 gp3_7_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_7 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_7) +
   theme_ipsum() +
   ggtitle("No concluyó pasado ciclo escolar" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_8_NIV<- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_8 ) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_8) +
   theme_ipsum() +
   ggtitle("No concluyó por COVID 19" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_1_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_1) +
   theme_ipsum() +
   ggtitle("No concluyó por falta de TICs" ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_2_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_3_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_4_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_5_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_6_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_7_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_8_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_9_9_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_9_9) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_9_9) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_10_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_10) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_10) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1255,14 +1255,14 @@ gp3_10_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_10) )+
 #### Razones para no cursar el presente ciclo escolar
 
 gp3_14_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_14) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_14) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_16_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_16) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_16) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1276,56 +1276,56 @@ gp3_17_1_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_1) )+
   theme(plot.title = element_text(size=16))
 
 gp3_17_2_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_3_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_4_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_5_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_6_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_7_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_17_8_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_17_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_17_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_18_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_18) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_18) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1335,56 +1335,56 @@ gp3_18_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_18) )+
 #### Razones de cambio de escuela
 
 gp3_19_1_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_2_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_3_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_4_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_5_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_6_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_7_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_19_8_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_19_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1393,70 +1393,70 @@ gp3_19_8_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_19_8) )+
 #### TICs usadas durante el pasado ciclo escolar
 
 gp3_12_1_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_2_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_3_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_4_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_5_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_6_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_7_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12_8_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12_8) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12_8) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_12A_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_12A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_12A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_13_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_13) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_13) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1466,56 +1466,56 @@ gp3_13_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_13) )+
 #### TICs usadas durante el presente ciclo escolar
 
 gp3_21_1_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_1) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_1) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_2_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_2) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_2) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_3_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_3) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_3) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_4_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_4) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_4) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_5_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_5) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_5) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_6_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_6) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_6) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21_7_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21_7) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21_7) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
   theme(plot.title = element_text(size=16))
 
 gp3_21A_NIV <- ggplot(bd.modulo, aes(x=NIV, y = 2, fill = P3_21A) )+
-  geom_bar(postition = "dodge", stat = "identity") +
+  geom_bar(position = "dodge", stat = "identity") +
   facet_wrap(~P3_21A) +
   theme_ipsum() +
   ggtitle("No concluyó por " ) +
@@ -1553,47 +1553,47 @@ gp3_9_1_ENT
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_2_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_3_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_4_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_5_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_6_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_7_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_8_ENT 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_9_ENT
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_10_ENT
 ```
 <div align="justify"> Descripción de la gráfica </div>
@@ -1602,11 +1602,205 @@ gp3_10_ENT
 
 ### Razones para no cursar el presente ciclo escolar 
 
+```{r  , echo=FALSE}
+gp3_14_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_16_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_1_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_2_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_3_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_4_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_5_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_6_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_7_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_8_ENT
+gp3_18_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_18_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
+### Razones para cambio de escuela
+```{r  , echo=FALSE}
+gp3_19_1_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_2_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_3_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_4_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_5_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_6_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_7_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_8_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
 
 ### TICs usadas durante el ciclo escolar pasado
 
+```{r  , echo=FALSE}
+gp3_12_1_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_2_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_3_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_4_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_5_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_6_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_7_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_8_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12A_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_13_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
 
 ### TICs usadas durante el presente ciclo escolar
+```{r  , echo=FALSE}
+gp3_21_1_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_2_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_3_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_4_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_5_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_6_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_7_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21A_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21B_ENT
+```
+<div align="justify"> Descripción de la gráfica </div>
+
 
 ## **SEXO**
 <div align = "justify"> Visualizaremos los 4 grupos de variables según el **sexo** (hombre - mujer) de nuestros sujetos.</div>
@@ -1630,47 +1824,47 @@ gp3_9_1_SEXO
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_2_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_3_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_4_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_5_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_6_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_7_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_8_SEXO 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_9_SEXO
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_10_SEXO
 ```
 <div align="justify"> Descripción de la gráfica </div>
@@ -1678,11 +1872,203 @@ gp3_10_SEXO
 
 ### Razones para no cursar el presente ciclo escolar 
 
+```{r  , echo=FALSE}
+gp3_14_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_16_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_1_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_2_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_3_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_4_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_5_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_6_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_7_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_8_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_18_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
+### Razones para cambio de escuela
+```{r  , echo=FALSE}
+gp3_19_1_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_2_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_3_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_4_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_5_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_6_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_7_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_8_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
 
 ### TICs usadas durante el ciclo escolar pasado
 
+```{r  , echo=FALSE}
+gp3_12_1_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_2_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_3_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_4_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_5_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_6_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_7_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_8_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12A_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_13_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
 
 ### TICs usadas durante el presente ciclo escolar
+```{r  , echo=FALSE}
+gp3_21_1_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_2_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_3_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_4_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_5_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_6_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_7_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21A_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21B_SEXO
+```
+<div align="justify"> Descripción de la gráfica </div>
 
 
 
@@ -1708,47 +2094,47 @@ gp3_9_1_EDAD
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_2_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_3_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_4_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_5_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_6_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_7_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_8_EDAD 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_9_EDAD
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_10_EDAD
 ```
 <div align="justify"> Descripción de la gráfica </div>
@@ -1756,12 +2142,207 @@ gp3_10_EDAD
 
 ### Razones para no cursar el presente ciclo escolar 
 
+```{r  , echo=FALSE}
+gp3_14_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_16_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_1_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_2_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_3_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_4_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_5_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_6_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_7_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_8_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_18_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+### Razones para cambio de escuela
+
+```{r  , echo=FALSE}
+gp3_19_1_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_2_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_3_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_4_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_5_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_6_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_7_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_8_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
 
 ### TICs usadas durante el ciclo escolar pasado
 
+```{r  , echo=FALSE}
+gp3_12_1_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_2_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_3_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_4_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_5_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_6_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_7_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_8_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12A_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_13_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
 
 ### TICs usadas durante el presente ciclo escolar
+```{r  , echo=FALSE}
+gp3_21_1_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
 
+```{r  , echo=FALSE}
+gp3_21_2_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_3_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_3_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_4_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_5_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_6_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_7_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21A_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21B_EDAD
+```
+<div align="justify"> Descripción de la gráfica </div>
 
 
 ## **NIVEL**
@@ -1786,47 +2367,47 @@ gp3_9_1_NIV
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_2_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_3_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_4_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_5_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_6_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_7_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_8_NIV 
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_9_9_NIV
 ```
 <div align="justify"> Descripción de la gráfica </div>
 
-```{r}
+```{r  , echo=FALSE}
 gp3_10_NIV
 ```
 <div align="justify"> Descripción de la gráfica </div>
@@ -1834,8 +2415,200 @@ gp3_10_NIV
 
 ### Razones para no cursar el presente ciclo escolar 
 
+```{r  , echo=FALSE}
+gp3_14_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_16_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_1_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_2_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_3_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_4_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_5_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_6_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_7_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_17_8_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_18_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
+### Razones para cambio de escuela
+```{r  , echo=FALSE}
+gp3_19_1_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+```{r  , echo=FALSE}
+gp3_19_2_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_3_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_4_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_5_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_6_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_7_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_19_8_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
 
 ### TICs usadas durante el ciclo escolar pasado
 
+```{r  , echo=FALSE}
+gp3_12_1_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_2_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_3_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_4_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_5_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_6_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_7_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12_8_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_12A_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_13_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+
 
 ### TICs usadas durante el presente ciclo escolar
+```{r  , echo=FALSE}
+gp3_21_1_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_2_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_3_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_4_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_5_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  , echo=FALSE}
+gp3_21_6_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  gp3_21B_NIV, echo=FALSE}
+gp3_21B_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  gp3_21B_NIV, echo=FALSE}
+gp3_21B_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
+
+```{r  gp3_21B_NIV, echo=FALSE}
+gp3_21B_NIV
+```
+<div align="justify"> Descripción de la gráfica </div>
