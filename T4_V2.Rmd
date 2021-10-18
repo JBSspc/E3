@@ -1,5 +1,5 @@
 ---
-title: "Tarea 04: Visualización preliminar de datos (Versión 2)"
+title: "Borrador de Parcial 2 "
 author: "Ana Paola Arias, Alejandro Gutiérrez, Sofía Palacios Cuevas"
 date: "29/9/2021"
 output: html_document
@@ -171,6 +171,237 @@ hist(tics.actual.mujeres$P3_21A)
 
 <div align="justify">Descripción </div>
 
-## **NIVEL**
+## **NIVEL P3_7**
 Repitamos los análisis anteriores, pero ahora considerando el nivel educativo.
+Aún nos falta ver cómo graficar por nivel. 
+
+
+Veamos qué niveles concluyeron el ciclo pasado anterior (2019/2020)
+
+Preescolar
+```{r}
+# Filtramos el que concluyeran o no los hombres el ciclo pasado
+concluyo.pasado.preescolar<-subset(bd.modulo, NIV == "1", select = P3_7)
+concluyo.pasado.preescolar<-na.omit(concluyo.pasado.preescolar)
+hist(concluyo.pasado.preescolar$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+Primaria
+
+```{r}
+# Filtramos el que concluyeran o no los hombres el ciclo pasado
+concluyo.pasado.primaria<-subset(bd.modulo, NIV == "2", select = P3_7)
+concluyo.pasado.primaria<-na.omit(concluyo.pasado.primaria)
+hist(concluyo.pasado.primaria$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+Secundaria
+
+```{r}
+# Filtramos el que concluyeran o no los hombres el ciclo pasado
+concluyo.pasado.secundaria<-subset(bd.modulo, NIV == "3", select = P3_7)
+concluyo.pasado.secundaria<-na.omit(concluyo.pasado.secundaria)
+hist(concluyo.pasado.secundaria$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+Carrera técnica con secundaria terminada
+
+```{r}
+# Filtramos el que concluyeran o no los hombres el ciclo pasado
+concluyo.pasado.ctsecu<-subset(bd.modulo, NIV == "4", select = P3_7)
+concluyo.pasado.ctsecu<-na.omit(concluyo.pasado.ctsecu)
+hist(concluyo.pasado.ctsecu$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+Preparatoria
+
+```{r}
+# Filtramos el que concluyeran o no los hombres el ciclo pasado
+concluyo.pasado.prepa<-subset(bd.modulo, NIV == "5", select = P3_7)
+concluyo.pasado.prepa<-na.omit(concluyo.pasado.prepa)
+hist(concluyo.pasado.prepa$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+Carrera Técnica con Preparatoria terminada
+
+```{r}
+# Filtramos el que concluyeran o no el ciclo pasado
+concluyo.pasado.ctprepa<-subset(bd.modulo, NIV == "6", select = P3_7)
+concluyo.pasado.ctprepa<-na.omit(concluyo.pasado.ctprepa)
+hist(concluyo.pasado.ctprepa$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+Licenciatura
+
+```{r}
+# Filtramos el que concluyeran o no el ciclo pasado
+concluyo.pasado.lic<-subset(bd.modulo, NIV == "7", select = P3_7)
+concluyo.pasado.lic<-na.omit(concluyo.pasado.lic)
+hist(concluyo.pasado.lic$P3_7)
+```
+
+<div align="justify">Descripción </div>
+
+
+Maestría
+
+```{r}
+# Filtramos el que concluyeran o no el ciclo pasado
+concluyo.pasado.master<-subset(bd.modulo, NIV == "8", select = P3_7)
+concluyo.pasado.master<-na.omit(concluyo.pasado.master)
+hist(concluyo.pasado.master$P3_7)
+```
+
+<div align="justify"> Después de aplicar el na.omit, nos quedan 0 observaciones. </div> 
+
+
+Doctorado
+
+```{r}
+# Filtramos el que concluyeran o no el ciclo pasado
+concluyo.pasado.doc<-subset(bd.modulo, NIV == "9", select = P3_7)
+concluyo.pasado.doc<-na.omit(concluyo.pasado.doc)
+hist(concluyo.pasado.doc$P3_7)
+```
+
+<div align="justify">Después de aplicar el na.omit, nos quedan 0 observaciones. </div>
+
+
+## **NIVEL P3_10**
+
+
+## **NIVEL P3_14**
+
+Preescolar
+
+```{r}
+# Filtramos el que se inscribieran o no los hombres el ciclo actual
+inscrito.actual.prees<-subset(bd.modulo, NIV == "1", select = P3_14)
+inscrito.actual.prees<-na.omit(inscrito.actual.prees)
+hist(inscrito.actual.prees$P3_14)
+```
+
+<div align="justify">Descripción </div>
+
+Primaria
+
+
+Secundaria 
+
+
+Carrera técnica con secundaria terminada
+
+
+Preparatoria
+
+
+Carrera técnica con preparatoria terminada
+
+
+Licenciatura
+
+
+Maestría 
+
+
+Doctorado
+
+## **NIVEL P3_18**
+
+Preescolar
+
+
+Primaria
+
+
+Secundaria 
+
+
+Carrera técnica con secundaria terminada
+
+
+Preparatoria
+
+
+Carrera técnica con preparatoria terminada
+
+
+Licenciatura
+
+
+Maestría 
+
+
+Doctorado
+
+
+## **NIVEL P3_12A**
+
+Preescolar
+
+
+Primaria
+
+
+Secundaria 
+
+
+Carrera técnica con secundaria terminada
+
+
+Preparatoria
+
+
+Carrera técnica con preparatoria terminada
+
+
+Licenciatura
+
+
+Maestría 
+
+
+Doctorado
+
+
+## **NIVEL P3_21A**
+
+Preescolar
+
+
+Primaria
+
+
+Secundaria 
+
+
+Carrera técnica con secundaria terminada
+
+
+Preparatoria
+
+
+Carrera técnica con preparatoria terminada
+
+
+Licenciatura
+
+
+Maestría 
+
+
+Doctorado
+
 
