@@ -29,7 +29,44 @@ View(bd.modulo)
 
 ## **LA BUENA**
 
-<div align = "justify"> Ahora veamos si podemos graficar. </div>
+<div align = "justify"><p> En las siguientes gráficas, el eje de las x corresponde al nivel educativo (NIV), las columnas se llenan según las respuestas a la pregunta de la encuesta, y se visualizan los resultados en dos gráficos, uno por cada sexo (SEXO). </p><p>Como recordatorio rápido:</p></div>
+
+Inscrito a ciclo escolar
+
+|0|1|2|
+|:-:|:-:|:-:|
+|NA|Sí|No|
+
+---
+
+Nivel educativo
+
+|0|1|2|3|4|5|6|7|8|9|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Ninguno| Preescolar| Primaria |Secundaria| Carrera técnica con secundaria terminada| Preparatoria| Carrera técnica con preparatoria terminada| Licenciatura| Maestría| Doctorado|
+
+---
+
+TICs utilizadas
+
+|1|2|3|4|5|6|7|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Computadora de escritorio|Computadora portátil|Tablet|Celular inteligente|Televisión digital|Otra|Ninguno|
+
+---
+
+Razpon principal 
+
+|1|2|3|4|5|6|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Falta de recursos|Quehacer|Logró meta educativa|No quiso estudiar|Reprobó|No había escuela|
+
+|7|8|9|10|11|12|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Trabaja|unión/boda/embarazo|Sin permiso para estudiar| Problemas con maestros/compañeros|Otro|Recién cumplió 3 años|
+
+---
+
 
 ```{r}
 # Cargamos nuestras librerías
@@ -48,6 +85,8 @@ ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_7 ) )+
   theme(plot.title = element_text(size=16))
 ```
 
+<div align = "justify> Descripción </div>
+
 ```{r}
 ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_10 ) )+
   geom_bar(position = "stack", stat = "identity") +
@@ -57,6 +96,8 @@ ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_10 ) )+
   ggtitle("Razón principal para no concluir 2019/2020" ) +
   theme(plot.title = element_text(size=16))
 ```
+
+<div align = "justify> Descripción </div>
 
 ```{r}
 ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_12A ) )+
@@ -68,6 +109,8 @@ ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_12A ) )+
   theme(plot.title = element_text(size=16))
 ```
 
+<div align = "justify> Descripción </div>
+
 ```{r}
 ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_14 ) )+
   geom_bar(position = "stack", stat = "identity") +
@@ -77,6 +120,9 @@ ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_14 ) )+
   ggtitle("Inscripción a ciclo 2020/2021" ) +
   theme(plot.title = element_text(size=16))
 ```
+
+<div align = "justify> Descripción </div>
+
 ```{r}
 ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_18 ) )+
   geom_bar(position = "stack", stat = "identity") +
@@ -86,6 +132,9 @@ ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_18 ) )+
   ggtitle("Razón principal para no cursar ciclo 2019/2020" ) +
   theme(plot.title = element_text(size=16))
 ```
+
+<div align = "justify> Descripción </div>
+
 ```{r}
 ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_21A ) )+
   geom_bar(position = "stack", stat = "identity") +
@@ -96,67 +145,8 @@ ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_21A ) )+
   theme(plot.title = element_text(size=16))
 ```
 
+<div align = "justify> Descripción </div>
 
+## **HIPÓTESIS**
 
-
-## **OTRA FORMA**
-
-```{r}
-ggplot(bd.modulo, aes(x=P3_7, group=NIV, fill=NIV))+
-  geom_density(adjust=1.5, alpha=0.5)+
-  theme_ipsum()
-```
-
-```{r}
-# Vemos cuántos alumnos encuestados hay por nivel
-ggplot(bd.modulo, aes(x=NIV, fill=NIV)) + 
-  geom_bar() + 
-  scale_fill_grey(start=0.5, end = 0.75)
-
-```
-
-```{r}
-# Vemos cuántos alumnos y alumnas encuestados 
-ggplot(bd.modulo, aes(x=SEXO, fill=SEXO)) + 
-  geom_bar() + 
-  scale_fill_grey(start=0.5, end = 0.75)
-
-```
-
-```{r}
-# Vemos cuántos alumnos y alumnas encuestados hay por nivel
-ggplot(bd.modulo, aes(x=NIV, fill=NIV)) + 
-  geom_bar() + 
-  facet_wrap(~SEXO) +
-  scale_fill_grey(start=0.5, end = 0.75)
-
-```
-
-## **READY**
-
-```{r}
-# Vemos cuántos alumnos y alumnas por nivel concluyeron el ciclo 2019/2020
-ggplot(bd.modulo, aes(x=P3_7, fill=P3_7)) + 
-  geom_bar() + 
-  facet_wrap(~SEXO) +
-  scale_fill_grey(start=0.5, end = 0.75)
-```
-
-
-```{r}
-# Vemos cuántos alumnos y alumnas por nivel concluyeron el ciclo 2019/2020
-ggplot(bd.modulo, aes(x=P3_12A, fill=P3_12A)) + 
-  geom_bar() + 
-  facet_wrap(~SEXO) +
-  scale_fill_grey(start=0.5, end = 0.75)
-```
-
-```{r}
-# Vemos cuántos alumnos y alumnas por nivel concluyeron el ciclo 2019/2020
-ggplot(bd.modulo, aes(x=NIV, fill=P3_14)) + 
-  geom_bar() + 
-  facet_wrap(~SEXO) +
-  scale_fill_grey(start=0.5, end = 0.75)
-```
-
-
+<div align = "justify> Texto </div>
