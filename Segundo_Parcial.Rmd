@@ -1,0 +1,162 @@
+---
+title: "Segundo_Parcial"
+author: "Sofía Palacios Cuevas"
+date: "18/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Menu {.tabset}
+
+## **READ DB**
+
+```{r}
+
+bd.modulo<-read.csv("bd.modulo.csv")
+# Leemos nuestra base de datos curada
+View(bd.modulo)
+
+#Cambiamos los NA por 0
+bd.modulo[is.na(bd.modulo)] <- 0 
+
+#Lo vemos
+View(bd.modulo)
+```
+
+
+## **LA BUENA**
+
+<div align = "justify"> Ahora veamos si podemos graficar. </div>
+
+```{r}
+# Cargamos nuestras librerías
+
+library(ggplot2)
+library(viridisLite)
+library(viridis)
+library(hrbrthemes)
+
+ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_7 ) )+
+  geom_bar(position = "stack", stat = "identity") +
+  scale_fill_viridis(discrete = F, option = "C") +
+  facet_wrap(~SEXO) +
+  theme_ipsum() +
+  ggtitle("Concluyó ciclo 2019/2020" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+```{r}
+ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_10 ) )+
+  geom_bar(position = "stack", stat = "identity") +
+  scale_fill_viridis(discrete = F, option = "D") +
+  facet_wrap(~SEXO) +
+  theme_ipsum() +
+  ggtitle("Razón principal para no concluir 2019/2020" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+```{r}
+ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_12A ) )+
+  geom_bar(position = "stack", stat = "identity") +
+  scale_fill_viridis(discrete = F, option = "H") +
+  facet_wrap(~SEXO) +
+  theme_ipsum() +
+  ggtitle("TICs usadas durante ciclo 2019/2020" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+```{r}
+ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_14 ) )+
+  geom_bar(position = "stack", stat = "identity") +
+  scale_fill_viridis(discrete = F, option = "C") +
+  facet_wrap(~SEXO) +
+  theme_ipsum() +
+  ggtitle("Inscripción a ciclo 2020/2021" ) +
+  theme(plot.title = element_text(size=16))
+```
+```{r}
+ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_18 ) )+
+  geom_bar(position = "stack", stat = "identity") +
+  scale_fill_viridis(discrete = F, option = "H") +
+  facet_wrap(~SEXO) +
+  theme_ipsum() +
+  ggtitle("Razón principal para no cursar ciclo 2019/2020" ) +
+  theme(plot.title = element_text(size=16))
+```
+```{r}
+ggplot(bd.modulo, aes(x=NIV, y = 263, fill = P3_21A ) )+
+  geom_bar(position = "stack", stat = "identity") +
+  scale_fill_viridis(discrete = F, option = "H") +
+  facet_wrap(~SEXO) +
+  theme_ipsum() +
+  ggtitle("TICs usadas durante ciclo 2020/2021" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+
+
+
+## **OTRA FORMA**
+
+```{r}
+ggplot(bd.modulo, aes(x=P3_7, group=NIV, fill=NIV))+
+  geom_density(adjust=1.5, alpha=0.5)+
+  theme_ipsum()
+```
+
+```{r}
+# Vemos cuántos alumnos encuestados hay por nivel
+ggplot(bd.modulo, aes(x=NIV, fill=NIV)) + 
+  geom_bar() + 
+  scale_fill_grey(start=0.5, end = 0.75)
+
+```
+
+```{r}
+# Vemos cuántos alumnos y alumnas encuestados 
+ggplot(bd.modulo, aes(x=SEXO, fill=SEXO)) + 
+  geom_bar() + 
+  scale_fill_grey(start=0.5, end = 0.75)
+
+```
+
+```{r}
+# Vemos cuántos alumnos y alumnas encuestados hay por nivel
+ggplot(bd.modulo, aes(x=NIV, fill=NIV)) + 
+  geom_bar() + 
+  facet_wrap(~SEXO) +
+  scale_fill_grey(start=0.5, end = 0.75)
+
+```
+
+## **READY**
+
+```{r}
+# Vemos cuántos alumnos y alumnas por nivel concluyeron el ciclo 2019/2020
+ggplot(bd.modulo, aes(x=P3_7, fill=P3_7)) + 
+  geom_bar() + 
+  facet_wrap(~SEXO) +
+  scale_fill_grey(start=0.5, end = 0.75)
+```
+
+
+```{r}
+# Vemos cuántos alumnos y alumnas por nivel concluyeron el ciclo 2019/2020
+ggplot(bd.modulo, aes(x=P3_12A, fill=P3_12A)) + 
+  geom_bar() + 
+  facet_wrap(~SEXO) +
+  scale_fill_grey(start=0.5, end = 0.75)
+```
+
+```{r}
+# Vemos cuántos alumnos y alumnas por nivel concluyeron el ciclo 2019/2020
+ggplot(bd.modulo, aes(x=NIV, fill=P3_14)) + 
+  geom_bar() + 
+  facet_wrap(~SEXO) +
+  scale_fill_grey(start=0.5, end = 0.75)
+```
+
+
