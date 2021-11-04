@@ -422,42 +422,55 @@ TicsPasadoActualNiv7<-ggplot(d.tics.niv7, aes(fill=tics.niv, y=value.tics.niv7, 
 AlumActVsDes
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> De esta gráfica podemos interpretar que, la cantidad de alumnos que no estudian
+en la actualidad, es mayor a la caanitoad reportada en años anteriores. Por la disminución de la 
+cantidad de alumnos reportados que estudian, podríamos inferir que se trata de estudiantes que han 
+tenido que abandonar sus estudios. </div>
 
 
 ```{r}
 AlumActVsDesSex
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica se muestra de manera cualitativa la cantidad de jóvenes que estudian
+vs jóvenes que no estudian. Podemos notar que en ambos casos (hombres y mujeres) hubo una ddisminución
+en los casos de estudiantes.</div>
 
 
 ```{r}
 AlumActVsDesNiv
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica se muestra la deserción por grado escolar (mujeres y hombres) en comparativa con años 
+anteriores. Podemos apreciar un desenso en la cantidad de casi todas las categorías, a excepción de 
+primaria, preparatoria y licenciatura en el caso de los hombres. Por otra parte, vemos un aumento en los casos
+  de estudiantes mujeres de secundaria, preparatoria y licenciatura. </div>
 
 
 ```{r}
 TicsPasadoActualSex
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica se proyecta la disponibilidad de TICs en el hogar por sexo. Podemos apreciar
+que la mayoría de las categorías se mantienen igual cuantitativamente, a excepción de las opciones 
+''celular'' y ''laptop'', en donde se presenta un aumento de casos para hombres. Por otra parte, podemos apreciar una
+baja en la disponibilidad de TICs para mujeres, en específico: TV, computadora de escritorio y celular. </div>
 
 
 ```{r}
 TicsPasadoActualNiv1
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: , notamos que las 
+}3 categorías se mantienen iguales.</div>
 
 
 ```{r}
 TicsPasadoActualNiv2
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: , notamos que 
+se presentó un aumento en la disponibilidad de laptop</div>
 
 
 ```{r}
