@@ -461,7 +461,7 @@ baja en la disponibilidad de TICs para mujeres, en específico: TV, computadora 
 TicsPasadoActualNiv1
 ```
 
-<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: , notamos que las 
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: . Notamos que las 
 }3 categorías se mantienen iguales.</div>
 
 
@@ -469,40 +469,50 @@ TicsPasadoActualNiv1
 TicsPasadoActualNiv2
 ```
 
-<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: , notamos que 
-se presentó un aumento en la disponibilidad de laptop</div>
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: . Notamos que 
+se presentó un aumento en la disponibilidad de laptop, mientras que las televisiones digitales presentaron
+una disminución. </div>
 
 
 ```{r}
 TicsPasadoActualNiv3
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify">  En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+la idsponibilidad de laptops como de celulares inteligentes aumentó, sin embargo, se presentó una disminución
+en la disponibilidad de computaooras de escritorio. Las tabletas y TVs digitales mantuvieron los mismos
+valores registrados previamente. </div>
 
 
 ```{r}
 TicsPasadoActualNiv4
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+Las variables mantuvieron los mismos valores a través del tiempo. </div>
 
 
 ```{r}
 TicsPasadoActualNiv5
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+se presentó un aumento en la disponibilidad de laptops, mientras que hubo una reducción en la disponibilidad 
+de computadoras de escritorio. Los valores referentes a celulares y tabletas se mantuvieron constantes.</div>
 
 
 ```{r}
 TicsPasadoActualNiv6
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+Las variables mantuvieron los mismos valores a través del tiempo. </div>
 
 
 ```{r}
 TicsPasadoActualNiv7
 ```
 
-<div align="justify"> Descripción </div>
+<div align="justify">  En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: . Notamos que
+los valores correspondientes a las variables registradas se mantuvieron constantes, al igual que con los niveles 
+educativos 4 y 6. </div>
