@@ -1,6 +1,6 @@
 ---
 title: "Segundo_Parcial"
-author: "Sofía Palacios Cuevas, Paola Arias"
+author: "Sofía Palacios Cuevas, Ana Paola Arias Martínez, Alejandro Gutierrez Figueroa"
 date: "06/11/2021"
 output: html_document
 ---
