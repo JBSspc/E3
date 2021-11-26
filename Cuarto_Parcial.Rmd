@@ -1,0 +1,505 @@
+---
+title: "Segundo_Parcial"
+author: "Sofía Palacios Cuevas, Paola Arias"
+date: "06/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Menu {.tabset}
+
+## **LECTURA BD**
+
+```{r}
+bd.modulo<-read.csv("bd.modulo.csv")
+# Leemos nuestra base de datos curada
+View(bd.modulo)
+#Cambiamos los NA por 0
+bd.modulo[is.na(bd.modulo)] <- 0 
+#Lo vemos
+View(bd.modulo)
+```
+
+
+## **DICCIONARIO**
+
+<div align = "justify"><p> En las siguientes gráficas, el eje de las x corresponde al nivel educativo (NIV), las columnas se llenan según las respuestas a la pregunta de la encuesta, y se visualizan los resultados en dos gráficos, uno por cada sexo (SEXO). </p><p>Como recordatorio rápido:</p></div>
+
+Inscrito a ciclo escolar
+
+|0|1|2|
+|:-:|:-:|:-:|
+|NA|Sí|No|
+
+---
+
+Nivel educativo
+
+|0|1|2|3|4|5|6|7|8|9|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Ninguno| Preescolar| Primaria |Secundaria| Carrera técnica con secundaria terminada| Preparatoria| Carrera técnica con preparatoria terminada| Licenciatura| Maestría| Doctorado|
+
+---
+
+TICs utilizadas
+
+|1|2|3|4|5|6|7|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Computadora de escritorio|Computadora portátil|Tablet|Celular inteligente|Televisión digital|Otra|Ninguno|
+
+---
+
+Razpon principal 
+
+|1|2|3|4|5|6|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Falta de recursos|Quehacer|Logró meta educativa|No quiso estudiar|Reprobó|No había escuela|
+
+|7|8|9|10|11|12|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Trabaja|unión/boda/embarazo|Sin permiso para estudiar| Problemas con maestros/compañeros|Otro|Recién cumplió 3 años|
+
+---
+
+P3_7
+¿(NOMBRE) concluyó el pasado año escolar (2019/2020)?
+1 si | 2 no
+
+P3_12A
+¿Cuál de estos aparatos o dispositivos usó principalmente?
+
+P3_14
+¿(NOMBRE) está inscrito(a) en el actual año escolar 2020-2021?
+1 si | 2 no
+
+P3_18
+¿Cuál es la razón principal por la que (NOMBRE) no cursa el año escolar actual (2020/2021)?
+
+
+P3_21A
+¿Cuál de estos aparatos o dispositivos usa principalmente?
+
+## **CÓDIGO PRINCIPAL**
+
+```{r}
+# Contemos por sexo, usando count() de dplyr
+library(dplyr)
+bd.modulo %>% count(SEXO)
+bidi<-as.data.frame(bd.modulo %>% count(P3_7))
+bidi
+pidi<-as.data.frame(bd.modulo %>% count(P3_14))
+pidi
+library(ggplot2)
+# Graficamos
+ggplot(bidi, aes(fill=n, y=n, x=P3_7)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  xlab("1 = Sí, 2 = No") +
+  ylab("sujetos") +
+  ggtitle("Alumnos que completaron el ciclo escolar pasado (2019/2020)" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+```{r}
+na.bd.modulo<-read.csv("bd.modulo.csv")
+View(na.bd.modulo)
+# Vamos a ir limpiando la base de datos, relación por relación
+# Alumnos concluyerón ciclo pasado + inscritos actual = insPasado
+# Concatemanos las columnas de las preguntas P3_7 (concluyeron pasado) y P3_14(inscritos ahora)
+insPasado<-as.data.frame(na.bd.modulo[,c(5,8)])
+# Lo vemos
+View(insPasado)
+# Tenemos unos NA que nos hacen ruido, borremos las filas donde hay NA para no comprometer los resultados
+insPasadoClean<-na.omit(insPasado)
+View(insPasadoClean)
+# Ahora intentemos graficarlo
+# Contemos los 'sí' y 'no' de cada variable. Para ello utilicemos el comando count de dplyr
+# Para los que concluyeron el ciclo pasado (2019/2020)
+insPasadoClean %>% count(P3_7)
+# Ahora sabemos que 156 sujetos sí concluyeron, mientras que 6 no. 
+# Para los inscritos en el ciclo actual (2020/2021)
+insPasadoClean %>% count(P3_14)
+# De esta revisión, descubrimos que 141 se inscribieron y 21 no
+# Ahora acomodamos nuestros datos para graficar. Vamos a crear 2 variables categóricas (ciclo y estatus) y una numérica (value). Las hemos llenado con los resultados obtenidos en las líneas previas
+ciclo <- c(rep("pasado",2), rep("actual",2))
+estatus <- rep(c("estudia", "no estudia"),2)
+value <- c(156,6,141,21)
+d<-data.frame(ciclo,estatus,value)
+# Graficamos
+AlumActVsDes<-ggplot(d, aes(fill=estatus, y=value, x=ciclo)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("Alumnos activos vs desertores" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+Ahora veamos la misma relación por SEXO.
+
+```{r}
+# Concatemanos las columnas de las preguntas P3_7 (concluyeron pasado) y P3_14(inscritos ahora)
+insPasadoSexNiv<-as.data.frame(na.bd.modulo[,c(3,4,5,8)])
+# Lo vemos
+View(insPasadoSexNiv)
+# Tenemos unos NA que nos hacen ruido, borremos las filas donde hay NA para no comprometer los resultados
+insPasadoSexNivClean<-na.omit(insPasadoSexNiv)
+View(insPasadoSexNivClean)
+# Volvemos a contar a los que completaron
+insPasadoSexNivClean %>% count(SEXO,P3_7)
+# Tenemos:
+# Completaron pasado: 86 hombres y 70 mujeres
+# No completaron: 2 hombres y 4 mujeres 
+# Contemos a los inscritos
+insPasadoSexNivClean %>% count (SEXO, P3_14)
+# Tenemos:
+# Inscritos: 76 hombres y 65 mujeres
+# No inscritos:12 hombres y 9 mujeres
+# Hagamos otra mini base
+ciclo.sex <- c(rep("pasado",4), rep("actual",4))
+estatus.sex <- rep(c("m estudia", "m no estudia", "h estudia", "h no estudia" ),2)
+value.sex <- c(70,4,86,2,65,9,76,12)
+d.sex<-data.frame(ciclo.sex,estatus.sex,value.sex)
+# Graficamos
+library(viridisLite)
+library(hrbrthemes)
+library(viridis)
+AlumActVsDesSex<-ggplot(d.sex, aes(fill=estatus.sex, y=value.sex, x=ciclo.sex)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("Alumnos activos vs desertores por sexo" ) +
+  theme(plot.title = element_text(size=16))
+```
+
+Veamos la relación anterior, ahora por NIV.
+
+```{r}
+# Contamos a los que completaron (por nivel)
+insPasadoSexNivClean %>% count(NIV,P3_7)
+# Tenemos:
+# NIV 1: 12 h; 0 m
+# NIV 2: 56 h; 2 m
+# NIV 3: 32 h; 0 m
+# NIV 4: 1 h; 0 m
+# NIV 5: 25 h; 4 m
+# NIV 6: 1 h; 0 m
+# NIV 7: 29 h; 0 m
+# Contemos a los inscritos
+insPasadoSexNivClean %>% count (NIV, P3_14)
+# Tenemos:
+# NIV 1: 12 h; 0 m
+# NIV 2: 58 h; 0 m
+# NIV 3: 30 h; 2 m
+# NIV 4: 1 h; 0 m
+# NIV 5: 21 h; 8 m
+# NIV 6: 1 h; 0 m
+# NIV 7: 18 h; 11 m
+# Hagamos otra mini base
+ciclo.niv <- c(rep("pasado",14), rep("actual",14))
+estatus.niv <- rep(c("m preescolar", "m primaria", "m secundaria", "m ct secu", "m prepa", "m ct prepa", "m lic", "h preescolar", "h primaria", "h secundaria", "h ct secu", "h prepa", "h ct prepa", "h lic" ),2)
+value.niv <- c(0,2,0,0,4,0,0,12,56,32,1,25,1,29,0,0,2,0,8,0,11,12,58,30,1,21,1,18)
+d.niv<-data.frame(ciclo.niv,estatus.niv,value.niv)
+View(d.niv)
+# Graficamos
+library(viridisLite)
+library(hrbrthemes)
+library(viridis)
+AlumActVsDesNiv<-ggplot(d.niv, aes(fill=estatus.niv, y=value.niv, x=ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("Alumnos activos vs desertores por nivel educativo" ) +
+  theme(plot.title = element_text(size=12))
+```
+
+Ahora analicemos el uso de TICs en ambos periodos (2019/2020) y (2020/2021)
+
+```{r}
+library(dplyr)
+# Concatemanos las columnas de las preguntas P3_12A (TICs curso pasado) y P3_21A(TICs actuales)
+TicsPasadoActualSexNiv<-as.data.frame(na.bd.modulo[,c(3,4,7,10)])
+# Lo vemos
+View(TicsPasadoActualSexNiv)
+# Quitemos las filas donde hay NA para no comprometer los resultados
+TicsPasadoActualSexNivClean<-na.omit(TicsPasadoActualSexNiv)
+View(TicsPasadoActualSexNivClean)
+# Contemos las TICs utilizadas en el ciclo pasado (2019/2020)
+TicsPasadoActualSexNivClean %>% count(SEXO,P3_12A)
+# Tenemos:
+# TIC 1: 13 hombres; 9 mujeres
+# TIC 2: 16 hombres; 17 mujeres
+# TIC 3: 2 hombres; 1 mujer
+# TIC 4: 39 hombres; 28 mujeres
+# TIC 5: 1 hombre; 3 mujeres
+# Contemos las TICs usadas en el ciclo actual (2021/2021)
+TicsPasadoActualSexNivClean %>% count(SEXO,P3_21A)
+# Ignoraremos la opción 6 y 7, pues no están incluidas en las opciones de la pregunta P3_12A
+# Tenemos:
+# TIC 1: 12 hombres; 8 mujeres
+# TIC 2: 17 hombres; 19 mujeres
+# TIC 3: 2 hombres; 1 mujer
+# TIC 4: 40 hombres; 27 mujeres
+# TIC 5: 0 hombres; 2 mujeres
+# Hagamos otra mini base
+tics.ciclo.sex <- c(rep("pasado",10), rep("actual",10))
+tics.sex<- rep(c("m CPU", "m laptop", "m tablet", "m smatphone", "m TV digital","h CPU", "h laptop", "h tablet", "h smartphone", "h TV digital"  ),2)
+value.tics.sex <- c(9,17,1,28,3,13,16,2,39,1,8,19,1,27,2,12,17,2,40,0)
+d.tics.sex<-data.frame(tics.ciclo.sex,tics.sex,value.tics.sex)
+View(d.tics.sex)
+# Graficamos
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+library(viridis)
+TicsPasadoActualSex<-ggplot(d.tics.sex, aes(fill=tics.sex, y=value.tics.sex, x=tics.ciclo.sex)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por sexo" ) +
+  theme(plot.title = element_text(size=12))
+```
+
+Analicemos finalmente el uso de TICs en ambos ciclos, ahora por nivel educativo (7).
+
+```{r}
+library(dplyr)
+View(TicsPasadoActualSexNivClean)
+# Contemos las TICs utilizadas en el ciclo pasado (2019/2020)
+TicsPasadoActualSexNivClean %>% count(NIV,P3_12A)
+# Tenemos:
+# NIV 1: 1:1; 2:2; 3:0; 4:8; 5:0
+# NIV 2: 1:7; 2:6; 3:1; 4:32; 5:2
+# NIV 3: 1:5; 2:10; 3:1; 4:11; 5:2
+# NIV 4: 1:1; 2:0; 3:0; 4:0; 5:0
+# NIV 5: 1:6; 2:6; 3:1; 4:8; 5:0
+# NIV 6: 1:0; 2:0; 3:0; 4:1; 5:0
+# NIV 7: 1:2; 2:9; 3:0; 4:7; 5:0
+# Contemos las TICs usadas en el ciclo actual (2021/2021)
+TicsPasadoActualSexNivClean %>% count(NIV,P3_21A)
+# Ignoraremos la opción de TICs 6 y 7, pues no están incluidas en las opciones de la pregunta P3_12A
+# Tenemos:
+# NIV 1: 1:1; 2:2; 3:0; 4:8; 5:0
+# NIV 2: 1:7; 2:7; 3:1; 4:31; 5:1; (6:1)
+# NIV 3: 1:4; 2:11; 3:1; 4:12; 5:2
+# NIV 4: 1:1; 2:0; 3:0; 4:0; 5:0
+# NIV 5: 1:5; 2:7; 3:1; 4:8; 5:0
+# NIV 6: 1:0; 2:0; 3:0; 4:1; 5:0
+# NIV 7: 1:2; 2:9; 3:0; 4:7; 5:0
+# Hagamos 7 mini bases (1 por cada nivel educativo)
+# NIV 1
+tics.ciclo.niv <- c(rep("pasado",5), rep("actual",5))
+tics.niv<- rep(c("CPU", "laptop", "tablet", "smartphone", "TV digital"  ),2)
+value.tics.niv1 <- c(1,2,0,8,0,1,2,0,8,0)
+d.tics.niv1<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv1)
+View(d.tics.niv1)
+# NIV 2
+# ya no es necesario escribir tics.niv, ni tics.cliclo.niv porque es la misma para todos los niveles
+value.tics.niv2 <- c(7,6,1,32,2,7,7,1,31,1)
+d.tics.niv2<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv2)
+View(d.tics.niv2)
+# NIV 3
+value.tics.niv3 <- c(5,10,1,11,2,4,11,1,12,2)
+d.tics.niv3<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv3)
+View(d.tics.niv3)
+# NIV 4
+value.tics.niv4 <- c(1,0,0,0,0,1,0,0,0,0)
+d.tics.niv4<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv4)
+View(d.tics.niv4)
+# NIV 5
+value.tics.niv5 <- c(6,6,1,8,0,5,7,1,8,0)
+d.tics.niv5<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv5)
+View(d.tics.niv5)
+# NIV 6
+value.tics.niv6 <- c(0,0,0,1,0,0,0,0,1,0)
+d.tics.niv6<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv6)
+View(d.tics.niv6)
+# NIV 7
+value.tics.niv7 <- c(2,9,0,7,0,2,9,0,7,0)
+d.tics.niv7<-data.frame(tics.ciclo.niv,tics.niv,value.tics.niv7)
+View(d.tics.niv7)
+# Graficamos
+library(ggplot2)
+library(viridisLite)
+library(hrbrthemes)
+library(viridis)
+TicsPasadoActualNiv1<-ggplot(d.tics.niv1, aes(fill=tics.niv, y=value.tics.niv1, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (1)" ) +
+  theme(plot.title = element_text(size=12))
+TicsPasadoActualNiv2<-ggplot(d.tics.niv2, aes(fill=tics.niv, y=value.tics.niv2, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (2)" ) +
+  theme(plot.title = element_text(size=12))
+TicsPasadoActualNiv3<-ggplot(d.tics.niv3, aes(fill=tics.niv, y=value.tics.niv3, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (3)" ) +
+  theme(plot.title = element_text(size=12))
+TicsPasadoActualNiv4<-ggplot(d.tics.niv4, aes(fill=tics.niv, y=value.tics.niv4, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (4)" ) +
+  theme(plot.title = element_text(size=12))
+TicsPasadoActualNiv5<-ggplot(d.tics.niv5, aes(fill=tics.niv, y=value.tics.niv5, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (5)" ) +
+  theme(plot.title = element_text(size=12))
+TicsPasadoActualNiv6<-ggplot(d.tics.niv6, aes(fill=tics.niv, y=value.tics.niv6, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (6)" ) +
+  theme(plot.title = element_text(size=12))
+TicsPasadoActualNiv7<-ggplot(d.tics.niv7, aes(fill=tics.niv, y=value.tics.niv7, x=tics.ciclo.niv)) + 
+  geom_bar(position="dodge", stat="identity") +
+  ggtitle("TICs ciclo pasado vs TICs actuales por nivel (7)" ) +
+  theme(plot.title = element_text(size=12))
+```
+
+## **GRÁFICAS**
+
+```{r}
+AlumActVsDes
+```
+
+<div align="justify"> De esta gráfica podemos interpretar que, la cantidad de alumnos que no estudian
+en la actualidad, es mayor a la caanitoad reportada en años anteriores. Por la disminución de la 
+cantidad de alumnos reportados que estudian, podríamos inferir que se trata de estudiantes que han 
+tenido que abandonar sus estudios. </div>
+
+
+```{r}
+AlumActVsDesSex
+```
+
+<div align="justify"> En esta gráfica se muestra de manera cualitativa la cantidad de jóvenes que estudian vs jóvenes que no estudian. Podemos notar que en ambos casos (hombres y mujeres) hubo una disminución en los casos de estudiantes.</div>
+
+
+```{r}
+AlumActVsDesNiv
+```
+
+<div align="justify"> En esta gráfica se muestra la deserción por grado escolar (mujeres y hombres) en comparativa con años 
+anteriores. Podemos apreciar un desenso en la cantidad de casi todas las categorías, a excepción de 
+primaria, preparatoria y licenciatura en el caso de los hombres. Por otra parte, vemos un aumento en los casos
+  de estudiantes mujeres de secundaria, preparatoria y licenciatura. </div>
+
+
+```{r}
+TicsPasadoActualSex
+```
+
+<div align="justify"> En esta gráfica se proyecta la disponibilidad de TICs en el hogar por sexo. Podemos apreciar
+que la mayoría de las categorías se mantienen igual cuantitativamente, a excepción de las opciones 
+''celular'' y ''laptop'', en donde se presenta un aumento de casos para hombres. Por otra parte, podemos apreciar una
+baja en la disponibilidad de TICs para mujeres, en específico: TV, computadora de escritorio y celular. </div>
+
+
+```{r}
+TicsPasadoActualNiv1
+```
+
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: . Notamos que las 
+}3 categorías se mantienen iguales.</div>
+
+
+```{r}
+TicsPasadoActualNiv2
+```
+
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: . Notamos que 
+se presentó un aumento en la disponibilidad de laptop, mientras que las televisiones digitales presentaron
+una disminución. </div>
+
+
+```{r}
+TicsPasadoActualNiv3
+```
+
+<div align="justify">  En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+la idsponibilidad de laptops como de celulares inteligentes aumentó, sin embargo, se presentó una disminución
+en la disponibilidad de computaooras de escritorio. Las tabletas y TVs digitales mantuvieron los mismos
+valores registrados previamente. </div>
+
+
+```{r}
+TicsPasadoActualNiv4
+```
+
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+Las variables mantuvieron los mismos valores a través del tiempo. </div>
+
+
+```{r}
+TicsPasadoActualNiv5
+```
+
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+se presentó un aumento en la disponibilidad de laptops, mientras que hubo una reducción en la disponibilidad 
+de computadoras de escritorio. Los valores referentes a celulares y tabletas se mantuvieron constantes.</div>
+
+
+```{r}
+TicsPasadoActualNiv6
+```
+
+<div align="justify"> En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo:  . Notamos que
+Las variables mantuvieron los mismos valores a través del tiempo. </div>
+
+
+```{r}
+TicsPasadoActualNiv7
+```
+
+<div align="justify">  En esta gráfica e proyecta la disponibilidad de TICs por nivel educativo: . Notamos que
+los valores correspondientes a las variables registradas se mantuvieron constantes, al igual que con los niveles 
+educativos 4 y 6. </div>
+
+## **WILCOXON**
+
+<div align="justify"> A continuación, realizaremos la prueba de rangos de signo de Wilcoxon. Este es un método no paramétrico de análisis de datos que usaremos para estudiar la distribución de la deserción escolar y del uso de TICs en dos momentos diferentes de tiempo (2019/2020 y 2020/2021). Para ello, utilizaremos la librería <code>coin</code>:</div>
+
+```{r}
+## Para la deserción escolar por sexo en el ciclo 2019/2020 vs la del ciclo 2020/2021
+library(coin)
+## Como "actual" y "pasado" son chr, debemos convertirlas a factor y luego a numéricas
+ciclo.sex.fac<-as.factor(ciclo.sex)
+ciclo.sex.num<-as.numeric(ciclo.sex.fac)
+wilcox.test(x = value.sex, y = ciclo.sex.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+```{r}
+## Para el uso de TICs (gral) en el ciclo 2019/2020 vs en el ciclo 2020/2021
+tics.ciclo.sex.fac<-as.factor(tics.ciclo.sex)
+tics.ciclo.sex.num<-as.numeric(tics.ciclo.sex.fac)
+wilcox.test(x = value.tics.sex, y = tics.ciclo.sex.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+<div align="justify"> Ahora lo hacemos por cada uno de los 7 niveles educativos registrados en el estado de Querétaro.</div>
+```{r}
+# Para el uso de TICs (por nivel) en el ciclo 2019/2020 vs en el ciclo 2020/2021
+tics.ciclo.niv.fac<-as.factor(tics.ciclo.niv)
+tics.ciclo.niv.num<-as.numeric(tics.ciclo.niv.fac)
+
+# Preescolar (NIV 1) 
+wilcox.test(x = value.tics.niv1, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+```{r}
+# Primaria (NIV 2) 
+wilcox.test(x = value.tics.niv2, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+```{r}
+# Secundaria (NIV 3)
+wilcox.test(x = value.tics.niv3, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+```{r}
+# CT sec. terminada (NIV 4)
+wilcox.test(x = value.tics.niv4, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+```{r}
+# Preparatoria (NIV 5)
+wilcox.test(x = value.tics.niv5, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+```{r}
+# CT prep. terminada (NIV 6)
+wilcox.test(x = value.tics.niv6, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
+
+```{r}
+# Lic
+wilcox.test(x = value.tics.niv7, y = tics.ciclo.niv.num, alternative = "two.sided", mu = 0, paired = TRUE)
+```
